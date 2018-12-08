@@ -12,5 +12,23 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return "<h1>Home page</h1>";
 });
+
+Route::get('/about', function () {
+    return view('pages.about');
+});
+
+Route::get('/services', function () {
+    return view('pages.services');
+});
+
+// Route::get('/posts/{id}/{author}', function ($id, $author) {
+//     return "The post with id ". $id . ' has author name ' . $author ;
+// });
+
+
+
+
+
+
