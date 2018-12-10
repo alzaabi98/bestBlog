@@ -8,6 +8,7 @@
 </head>
 <body>
     
-    <h1>about page from view</h1>
+    <h1> Welcome to the best Blog</h1>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam fugit eveniet, voluptatum aliquam similique odit qui dolorem cum odio reprehenderit.</p>
 </body>
 </html>

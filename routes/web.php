@@ -11,17 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return "<h1>Home page</h1>";
-});
 
-Route::get('/about', function () {
-    return view('pages.about');
-});
+Route::get('/', 'PagesController@index' );
+Route::get('/about', 'PagesController@about' );
+Route::get('/services', 'PagesController@services' );
 
-Route::get('/services', function () {
-    return view('pages.services');
-});
+
 
 // Route::get('/posts/{id}/{author}', function ($id, $author) {
 //     return "The post with id ". $id . ' has author name ' . $author ;
