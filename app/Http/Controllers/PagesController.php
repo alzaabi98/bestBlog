@@ -8,7 +8,8 @@ class PagesController extends Controller
 {
 
     public function index() {
-        return view('pages.index');
+        $title = ' Hello to index';
+        return view('pages.index')->with('title',$title);
     }
 
     public function about() {
@@ -16,6 +17,13 @@ class PagesController extends Controller
     }
 
     public function services() {
-        return view('pages.services');
+
+        $data = [
+            'title' => ' The following services are provided: ',
+            'services' => [
+                'programming','automation',' web desing'
+            ]
+            ];
+        return view('pages.services')->with($data);
     }
 }

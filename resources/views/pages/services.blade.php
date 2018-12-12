@@ -1,13 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{ env('APP_NAME','BestBlog')}}</title>
-</head>
-<body>
-    
-    <h1>services page from view</h1>
-</body>
-</html>
+@extends('layouts.master')
+
+@section('content')
+<h1>{{$title}}</h1>
+<ul>
+    @if(count($services) > 0 )
+        @foreach( $services as $service) 
+
+        <li>{{$service}}  </li>    
+        @endforeach
+    @endif
+   
+</ul>
+  
+@endsection
