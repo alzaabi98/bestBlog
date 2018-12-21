@@ -21,7 +21,7 @@
                                         {{$post->body}}
                                     </div>
                                     <hr>
-                                    <a href="#" class="btn btn-primary"> Show More</a>
+                                <a href="{{ '/posts/' . $post->id}}" class="btn btn-primary"> Show More</a>
                                 </div>    
                             </div>
                        </div>
