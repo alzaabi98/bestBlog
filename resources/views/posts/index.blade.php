@@ -9,7 +9,7 @@
                 <div class="row">
                     @foreach($posts as $post)
                         <div class="col-md-4">
-                            <div class="card mb-3" style="max-width: 18rem;">
+                            <div class="card mb-3" style="min-width: 18rem;">
                                 <div class="card-header bg-dark text-white">
                                         {{$post->title}}
                                 </div>
@@ -33,13 +33,19 @@
         </div>
 
         <div class="col-md-3">
-                <div class="card mb-3" style="max-width: 18rem;">
+                <div class="card ml-3" style="max-width: 10rem;">
                         <div class="card-header bg-info text-white"> Stats.</div>
                         <div class="card-body">
                         
                         <p class="card-text"> All Posts: {{$count}}</p>
                         </div>
                     </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 d-flex justify-content-center">
+            {{$posts->links()}}
         </div>
     </div>
 @endsection

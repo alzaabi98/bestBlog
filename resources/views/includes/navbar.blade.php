@@ -8,6 +8,7 @@
             <a class="nav-item nav-link active" href="{{url('/')}}">Home <span class="sr-only">(current)</span></a>
             <a class="nav-item nav-link" href="{{url('/about')}}">About</a>
             <a class="nav-item nav-link" href="{{url('/services')}}">Services</a>
+            <a class="nav-item nav-link" href="{{url('/posts')}}">Posts</a>
             
           </div>
         </div>
