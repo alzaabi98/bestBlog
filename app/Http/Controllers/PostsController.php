@@ -24,4 +24,18 @@ class PostsController extends Controller
         return view('posts.show', compact('post'));
     }
 
+    // create post
+
+    public function create() {
+
+        return view('posts.create');
+    }
+
+    //store post
+
+    public function store(Request $request) {
+
+        dd($request->title);
+    }
+
 }
