@@ -35,7 +35,21 @@ class PostsController extends Controller
 
     public function store(Request $request) {
 
-        dd($request->title);
+        $request->validate([
+
+            'title' =>  'required|max:200',
+            'body' => 'required|max:500'
+        ]);
+
+        $post = new Post() ;
+        $post->title =  $request->title ;
+        $post->body =  $request->body ;
+
+        $post->save();
+
+        return redirect('/posts')->with('status', 'Post was created !');
+
+        
     }
 
 }

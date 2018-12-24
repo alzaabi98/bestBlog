@@ -9,7 +9,9 @@
 </head>
 <body>
     @include('includes.navbar')
+    <div class="mb-3"></div>
     <div class="container">
+        @include('includes.messages')    
         @yield('content')
     </div>
     <script src="{{asset('js/app.js')}}"></script>
