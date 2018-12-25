@@ -52,4 +52,32 @@ class PostsController extends Controller
         
     }
 
+    // edit post form
+
+    public function edit($id) {
+
+        $post = Post::find($id);
+        return view('posts.edit', compact('post'));
+    }
+
+    // update post form 
+
+    public function update(Request $request, $id) {
+
+        $request->validate([
+
+            'title' =>  'required|max:200',
+            'body' => 'required|max:500'
+        ]);
+
+        $post = Post::find($id) ;
+        $post->title = $request->title;
+        $post->body = $request->body;
+
+        $post->save();
+
+        return redirect('/posts')->with('status', 'Post was updated !');
+
+    }
+
 }
