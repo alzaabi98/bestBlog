@@ -80,4 +80,13 @@ class PostsController extends Controller
 
     }
 
+    //destroy post
+    public function destroy($id) {
+
+        $post = POST::find($id) ;
+        $post->delete();
+        return redirect('/posts')->with('status', 'Post was deleted !');
+
+    }
+
 }

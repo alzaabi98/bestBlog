@@ -15,13 +15,13 @@
                 
                 <hr>
                 <small class="text-muted"> <p> {{$post->created_at}}</p></small>
-            <a href="{{ '/posts/' . $post->id . '/edit'}}" class="btn btn-primary"> Edit</a>
-            <a href="#" class="btn btn-danger"> Delete</a>
-            <form action="{{route('/posts', ['id' => $post->id])}}" method="POST">
+            <a href="{{ '/posts/' . $post->id . '/edit'}}" class="btn btn-primary float-left mr-2"> Edit</a>
+            
+            <form action="{{route('posts.destroy', ['id' => $post->id])}}" method="POST">
             
                 @csrf
                 @method('DELETE')
-                <button type="submit" class="btn btn-danger"> Delete</button>
+                <button type="submit" class="btn btn-danger float-left"> Delete</button>
 
             </form>
             </div>    
