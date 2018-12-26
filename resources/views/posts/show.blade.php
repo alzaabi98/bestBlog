@@ -17,6 +17,13 @@
                 <small class="text-muted"> <p> {{$post->created_at}}</p></small>
             <a href="{{ '/posts/' . $post->id . '/edit'}}" class="btn btn-primary"> Edit</a>
             <a href="#" class="btn btn-danger"> Delete</a>
+            <form action="{{route('/posts', ['id' => $post->id])}}" method="POST">
+            
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-danger"> Delete</button>
+
+            </form>
             </div>    
         </div>
     </div>

@@ -18,6 +18,8 @@ Route::get('/posts/{id}','PostsController@show')->name('posts.show');
 Route::get('/posts/{id}/edit','PostsController@edit')->name('posts.edit');
 Route::put('/posts/{id}','PostsController@update')->name('posts.update');
 
+Route::delete('/posts/{id}','PostsController@destroy')->name('posts.destroy');
+
 
 // Route::get('/posts/{id}/{author}', function ($id, $author) {
 //     return "The post with id ". $id . ' has author name ' . $author ;
