@@ -30,3 +30,7 @@ Route::delete('/posts/{id}','PostsController@destroy')->name('posts.destroy');
 
 
 
+
+Auth::routes();
+
+Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
