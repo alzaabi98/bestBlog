@@ -14,7 +14,26 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    <table class="table">
+                            <thead>
+                              <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Title</th>
+                                <th scope="col">Action</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                                @foreach($posts as $post)
+                                     <tr>
+                                        <th scope="row">{{$post->id}}</th>
+                                        <td>{{$post->title}}</td>
+                                     <td> <a href="{{'/posts/' . $post->id}}" class="btn btn-primary">Show post</a></td>
+                                     </tr>
+                                @endforeach
+                       
+                              
+                            </tbody>
+                          </table>
                 </div>
             </div>
         </div>
