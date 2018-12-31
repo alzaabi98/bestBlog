@@ -6,7 +6,13 @@ use Illuminate\Http\Request;
 use DB;
 use App\Post;
 class PostsController extends Controller
-{
+{   
+    public function __construct()
+    {
+        $this->middleware('auth')->except(['index','show']);
+    }
+
+
     // index page
     public function index() {
         //$posts = Post::take(5)->get() ;
@@ -60,6 +66,9 @@ class PostsController extends Controller
     public function edit($id) {
 
         $post = Post::find($id);
+        if (auth()->user()->id !== $post->user_id) {
+            return redirect('/posts')->with('error', ' You are not authorized');
+        }
         return view('posts.edit', compact('post'));
     }
 

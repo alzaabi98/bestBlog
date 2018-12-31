@@ -15,15 +15,21 @@
                 
                 <hr>
                 <small class="text-muted"> <p> {{$post->created_at}}</p></small>
-            <a href="{{ '/posts/' . $post->id . '/edit'}}" class="btn btn-primary float-left mr-2"> Edit</a>
-            
-            <form action="{{route('posts.destroy', ['id' => $post->id])}}" method="POST">
-            
-                @csrf
-                @method('DELETE')
-                <button type="submit" class="btn btn-danger float-left"> Delete</button>
+            <p style="color:brown;">created by: {{$post->user->name}}</p>
+            @auth
 
-            </form>
+                    @if( auth()->user()->id == $post->user_id)
+                    <a href="{{ '/posts/' . $post->id . '/edit'}}" class="btn btn-primary float-left mr-2"> Edit</a>
+                
+                    <form action="{{route('posts.destroy', ['id' => $post->id])}}" method="POST">
+                    
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger float-left"> Delete</button>
+
+                    </form>
+                @endif
+            @endauth
             </div>    
         </div>
     </div>
