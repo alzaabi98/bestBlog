@@ -9,6 +9,9 @@
                 <div class="card-title">
                     <h4> {{$post->title}}</h4>
                 </div>
+
+                <img src="{{asset('storage/coverImages/' . $post->image)}}" alt="" height="400" width="700">
+
                 <div class="card-text">
                     {{$post->body}}
                 </div>

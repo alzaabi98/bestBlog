@@ -10,6 +10,7 @@
                     @foreach($posts as $post)
                         <div class="col-md-4">
                             <div class="card mb-3" style="min-width: 18rem;">
+                                <img src="{{asset('storage/coverImages/' . $post->image)}}" alt="" height="200">
                                 <div class="card-header bg-dark text-white">
                                         {{$post->title}}
                                 </div>

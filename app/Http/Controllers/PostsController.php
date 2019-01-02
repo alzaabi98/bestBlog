@@ -40,17 +40,30 @@ class PostsController extends Controller
     //store post
 
     public function store(Request $request) {
-       
+    
         $request->validate([
 
             'title' =>  'required|max:200',
-            'body' => 'required|max:500'
+            'body' => 'required|max:500',
+            'coverImage' => 'image|mimes:jpeg,bmp,png|max:1999'
 
         ]);
+
+        if ($request->hasFile('coverImage')) {
+            $file = $request->file('coverImage') ;
+            $ext = $file->getClientOriginalExtension() ;
+            $filename = 'cover_image' . '_' . time() . '.' . $ext ;
+            $file->storeAs('public/coverImages', $filename);
+          
+        } else {
+
+            $filename = 'noimage.png';
+        }
 
         $post = new Post() ;
         $post->title =  $request->title ;
         $post->body =  $request->body ;
+        $post->image = $filename; 
         $post->user_id = auth()->user()->id;
         
 
