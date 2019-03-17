@@ -6,7 +6,7 @@ This repo will be used for my Laravel course in my YouTube channel
 
 # To clone this project :
 
-### 1- git clone \https://github.com/alzaabi98/bestBlog.git\
+### 1- git clone https\://github.com/alzaabi98/bestBlog.git
 ### 2- cd bestblog
 ### 3- composer install
 ### 4- npm install
